@@ -11,6 +11,5 @@ with their preparation for technical interviews.
 * SCSS
 
 ### Evaluate:
-'''
-3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))
-'''
+
+'3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))'
