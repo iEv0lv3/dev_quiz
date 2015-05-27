@@ -12,4 +12,4 @@ with their preparation for technical interviews.
 
 ### Evaluate:
 
-'3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))'
+3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))
