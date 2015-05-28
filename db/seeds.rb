@@ -18,10 +18,10 @@ questions = [{"true && true" => true && true},
              {'1 == 1 && (!("testing" == 1 || 1 == 0))' => 1 == 1 && (!("testing" == 1 || 1 == 0))},
              {'"chunky" == "bacon" && (!(3 == 4 || 3 == 3))' => "chunky" == "bacon" && (!(3 == 4 || 3 == 3))},
              {'3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))' => 3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))}
-]
+            ]
 
 questions.each do |q|
   q.each do |k, v|
-    LogicQuestion.new(question: k, answer: v)
+    LogicQuestion.create(question: k, answer: v)
   end
 end
