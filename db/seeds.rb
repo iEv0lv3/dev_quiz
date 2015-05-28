@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+questions = [{"true && true" => true && true},
+             {"false && true" => false && true},
+             {"1 == 1 && 2 == 1" => 1 == 1 && 2 == 1},
+             {'"test" == "test"' => "test" == "test"},
+             {"1 == 1 || 2 != 1" => 1 == 1 || 2 != 1},
+             {"true && 1 == 1" => true && 1 == 1},
+             {"false && 0 != 0" => false && 0 != 0},
+             {"true || 1 == 1" => true || 1 == 1},
+             {'"test" == "testing"' => "test" == "testing"},
+             {"1 != 0 && 2 == 1" => 1 != 0 && 2 == 1},
+             {'"test" != "testing"' => "test" != "testing"},
+             {'"test" == 1' => "test" == 1},
+             {"!(true && false)" => !(true && false)},
+             {"!(1 == 1 && 0 != 1)" => !(1 == 1 && 0 != 1)},
+             {"!(10 == 1 || 1000 == 1000)" => !(10 == 1 || 1000 == 1000)},
+             {"!(1 != 10 || 3 == 4)" => !(1 != 10 || 3 == 4)},
+             {'!("testing" == "testing" && "Zed" == "Cool Guy")' => !("testing" == "testing" && "Zed" == "Cool Guy")},
+             {'1 == 1 && (!("testing" == 1 || 1 == 0))' => 1 == 1 && (!("testing" == 1 || 1 == 0))},
+             {'"chunky" == "bacon" && (!(3 == 4 || 3 == 3))' => "chunky" == "bacon" && (!(3 == 4 || 3 == 3))},
+             {'3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))' => 3 == 3 && (!("testing" == "testing" || "Ruby" == "Fun"))}
+]
+
+questions.each do |q|
+  q.each do |k, v|
+    LogicQuestion.new(question: k, answer: v)
+  end
+end
