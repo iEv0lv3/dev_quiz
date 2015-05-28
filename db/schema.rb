@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20150526221323) do
   enable_extension "plpgsql"
 
   create_table "logic_questions", force: :cascade do |t|
-    t.string   "question",                  null: false
-    t.boolean  "answer",     default: true, null: false
+    t.string   "question",                   null: false
+    t.boolean  "answer",     default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
