@@ -22,6 +22,7 @@ questions = [{"true && true" => true && true},
 
 questions.each do |q|
   q.each do |k, v|
-    LogicQuestion.create(question: k, answer: v)
+    answer_string = v.to_s
+    LogicQuestion.create(question: k, answer: answer_string)
   end
 end
