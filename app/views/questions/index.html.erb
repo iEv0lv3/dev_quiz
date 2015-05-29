@@ -18,7 +18,10 @@
             <div class="panel">
               <h4 class="hide-for-small">Question<hr/></h4>
               <div class="code_box">
-                Evaluate: !(10 == 1 || 1000 == 1000)
+                <% @questions.each_slice(1) do |slice| %>
+                  <p><%= slice[0][:question] %></p>
+                  <% form_for @answers %>
+                <% end %>
               </div>
             </div>
 

@@ -18,12 +18,8 @@ a {
   }
 }
 
-h1, h2, h3, h4, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Architects Daughter', cursive;
-
-  &h5 {
-    font-family: 'Source Code Pro', ;
-  }
 }
 
 .button {
@@ -58,4 +54,14 @@ h1, h2, h3, h4, h6 {
 
 .template_wrapper {
   margin-top: 2rem;
+}
+
+.code_box {
+  font-family: 'Source Code Pro';
+  background-color: #E6E6E6;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
 }
