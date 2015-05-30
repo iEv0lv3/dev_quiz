@@ -1,7 +1,5 @@
-class QuestionsController < ApplicationController
+class AnswersController < ApplicationController
   def index
-    @users = User.all
-    @questions = LogicQuestion.all
     @answer = UserAnswer.new
   end
 
