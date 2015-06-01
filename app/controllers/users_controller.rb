@@ -1,14 +1,21 @@
-class AnswersController < ApplicationController
+class UsersController < ApplicationController
   def index
+    @questions = LogicQuestion.all
     @user = current_user.id
+    @user_answer = UserAnswer.new
+  end
+
+  def show
+    @questions = LogicQuestion.all
+    @user_answer = UserAnswer.new
   end
 
   def new
-    @answer = Answer.new
+    @user_answer = UserAnswer.new
   end
 
   def create
-    @answer = Answer.create(answer_params)
+    @answer = UserAnswer.create(answer_params)
     if @answer.save
       flash[:notice] = "Thanks!"
     else

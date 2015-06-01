@@ -23,10 +23,10 @@
                   <div>
                     <%= slice.question %>
                   </div>
-                    <%= form_for [@user, @answer] do |f| %>
+                    <%= form_for @user_answer(user) do |f| %>
                     <%= f.label :body, "Your answer: " %>
                     <%= f.text_field :body %>
-                    <%= f.hidden_field :user_id, :value => @user %>
+                    <%= f.hidden_field :user_id %>
                     <%= f.submit "Submit Answer" %>
                     <% end %>
                 <% end %>

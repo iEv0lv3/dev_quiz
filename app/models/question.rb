@@ -1,4 +1,4 @@
-class LogicQuestion < ActiveRecord::Base
+class Question < ActiveRecord::Base
   validates_presence_of :answer
   validates_presence_of :question
 end
