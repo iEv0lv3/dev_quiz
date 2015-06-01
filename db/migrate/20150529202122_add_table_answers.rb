@@ -1,6 +1,6 @@
-class AddTableUserAnswers < ActiveRecord::Migration
+class AddTableAnswers < ActiveRecord::Migration
   def change
-    create_table :user_answers do |t|
+    create_table :answers do |t|
       t.text   :body, null: false
       t.string :username, null: false
 
