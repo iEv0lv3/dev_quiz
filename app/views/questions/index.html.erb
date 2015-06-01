@@ -18,16 +18,19 @@
             <div class="panel">
               <h4 class="hide-for-small">Question<hr/></h4>
               <div class="code_box">
+              <% if signed_in? %>
                 <% @questions.each do |slice| %>
                   <div>
                     <%= slice.question %>
                   </div>
-                    <%= form_for @answer do |f| %>
+                    <%= form_for @answers do |f| %>
                     <%= f.label :body, "Your answer: " %>
                     <%= f.text_field :body %>
+                    <%= f.hidden_field :user_id %>
                     <%= f.submit "Submit Answer" %>
                     <% end %>
                 <% end %>
+              <% end %>
               </div>
             </div>
 

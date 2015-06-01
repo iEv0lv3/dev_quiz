@@ -1,5 +1,10 @@
 class AnswersController < ApplicationController
   def index
+    @user = current_user
+    @answer = UserAnswer.new
+  end
+
+  def new
     @answer = UserAnswer.new
   end
 
@@ -15,6 +20,6 @@ class AnswersController < ApplicationController
 
   protected
   def answer_params
-    params.require(:answers).permit(:body, :username)
+    params.require(:answers).permit(:body, :user_id, :username)
   end
 end

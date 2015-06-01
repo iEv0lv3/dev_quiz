@@ -2,6 +2,9 @@ class QuestionsController < ApplicationController
   def index
     @users = User.all
     @questions = LogicQuestion.all
+  end
+
+  def new
     @answer = UserAnswer.new
   end
 
@@ -17,6 +20,6 @@ class QuestionsController < ApplicationController
 
   protected
   def answer_params
-    params.require(:answers).permit(:body, :username)
+    params.require(:answers).permit(:body, :user_id, :username)
   end
 end
