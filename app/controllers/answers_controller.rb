@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   def index
-    @user = current_user.id
+    @user = current_user
   end
 
   def new
@@ -11,6 +11,7 @@ class AnswersController < ApplicationController
     @answer = Answer.create(answer_params)
     if @answer.save
       flash[:notice] = "Thanks!"
+      redirect_to root_path
     else
       flash[:notice] = "Invalid entry :-("
       redirect_to :back
@@ -19,6 +20,6 @@ class AnswersController < ApplicationController
 
   protected
   def answer_params
-    params.require(:answers).permit(:body, :user_id, :username)
+    params.require(:answer).permit(:body, :user_id, :username)
   end
 end
