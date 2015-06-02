@@ -1,6 +1,6 @@
 class Answer < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :body
-  validates_presence_of :username
+  validates_presence_of :body, presence: true
+  validates_presence_of :username, presence: true
 end
