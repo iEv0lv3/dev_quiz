@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = Hash[Question.all.map { |q| [q.id, q.question] }]
     @user = current_user
     @answer = Answer.new
   end
