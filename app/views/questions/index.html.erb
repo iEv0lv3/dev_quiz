@@ -28,6 +28,7 @@
                     <%= f.text_field :body %>
                     <%= f.hidden_field :user_id, :value => current_user.id, method: :put %>
                     <%= f.hidden_field :username, :value => current_user.username, method: :put %>
+                    <%= f.hidden_field :answered, :value => true, method: :put %>
                     <%= f.submit "Submit Answer" %>
                     <% end %>
                 <% end %>
